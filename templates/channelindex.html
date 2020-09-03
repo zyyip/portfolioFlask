@@ -1,0 +1,83 @@
+{% extends "channellayout.html" %}
+
+
+
+
+{% block title %}
+Username
+{% endblock %}
+
+{% block header %}
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById("form1").style.display = "none";
+
+        if (document.getElementById('adminchecker').value == '') {
+
+            if (!localStorage.getItem("username")) {
+                jQuery('#myModal').modal();
+            };
+
+            document.querySelector('#unbutton').onclick = () => {
+                const name = document.querySelector('#dname').value;
+                localStorage.setItem("username", name);
+                var userID = document.getElementById('userIDIndex').value;
+                window.location.replace("/createchannel/" + userID);
+            }
+
+            if (localStorage.getItem("current_channel")) {
+                //window.location.replace("/channel/" + localStorage.getItem("current_channel"));
+                document.getElementById('current_channel').value = localStorage.getItem("current_channel");
+                document.getElementById("form1").submit();
+            }
+
+            if (document.getElementById('added_channel').value != '') {
+                //alert(document.getElementById('addedChannel').value);
+                document.getElementById('current_channel').value = document.getElementById('added_channel').value;
+                document.getElementById("form1").submit();
+            }
+        }
+        else {
+            localStorage.setItem("username", "admin");
+        }
+
+    });
+
+
+</script>
+{% endblock %}
+
+
+{% block body %}
+<input type="hidden" class="hidden" id="userIDIndex" value={{useridx}}>
+<input type="hidden" class="hidden" id="added_channel" value={{addedChannel}}>
+
+<form id="form1" action="{{ url_for('enter_channel')}}" method="POST">
+    <input type="text" class="form-control" name="current_channel" id="current_channel" value="">
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false"
+    data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div> -->
+            <div class="modal-body">
+                <input type="text" id="dname" name="dname" class="form-control" placeholder="Name" required autofocus>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                <button id="unbutton" type="button" class="btn btn-primary" data-dismiss="modal">Save name</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

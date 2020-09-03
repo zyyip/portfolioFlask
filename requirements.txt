@@ -1,0 +1,8 @@
+flask_mail
+flask
+flask
+flask_session
+psycopg2
+flask_sqlalchemy
+sqlalchemy
+flask_socket

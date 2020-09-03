@@ -1,0 +1,352 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Health &amp; Fitness Android App
+{% endblock %}
+
+{% block slidertitle %}
+<h1 class="promo-block-title">Health &amp; Fitness</h1>
+<p class="promo-block-text">Android application</p>
+{% endblock %}
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+{% block navbar %}
+<div class="collapse navbar-collapse nav-collapse">
+    <div class="menu-container">
+        <ul class="nav navbar-nav navbar-nav-right">
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="/home/{{useridx}}">Home</a>
+            </li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#about">Hypothesis</a></li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#experience">Software</a>
+            </li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#education">Certificate</a>
+            </li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#work">Images</a></li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+<!-- End Navbar Collapse -->
+
+{% block sliderwp %}
+<div class="promo-block parallax-window" data-parallax="scroll"
+    data-image-src="{{ url_for('static', filename='img/1920x1080/04.jpg')}}">
+    {% endblock %}
+
+    {% block body %}
+    <!--========== PAGE LAYOUT ==========-->
+    <!-- About -->
+    <div id="about">
+        <div class="container content-lg">
+            <div class="row">
+                <div class="col-sm-3 sm-margin-b-30">
+                    <div class="text-right sm-text-left">
+                        <h2 class="margin-b-0">Summary</h2>
+                        <p>What is this project about.</p>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-sm-offset-1">
+                    <div class="margin-b-60">
+
+                        <p> I was tasked to develop an application bsed off a self-thought innovative concept
+                            that had to use IBM Cloud services.</p>
+                        <p> The idea was to develop an interactive android health and btness application that
+                            allowed users to communicate with their families and friends to plan exercising
+                            routines on a daily basis. The app also provided basic functionalities such as,
+                            calculating and planning of the amount of calories to be reduced and the ability
+                            to navigate throughout the world with google maps sdk.</p>
+                        <p> IBM liked our concept and we were chosen as the top 5 finalists group amongst 20
+                            other groups that has participated in the challenge.</p>
+                    </div>
+                </div>
+            </div>
+            <!--// end row -->
+        </div>
+    </div>
+    <!-- End About -->
+
+    <!-- Experience -->
+    <div id="experience">
+        <div class="bg-color-sky-light" data-auto-height="true">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Software</h2>
+                            <p>How it was built.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <div class="row row-space-2 margin-b-4">
+                            <div class="col-md-4 md-margin-b-4">
+                                <div class="service" data-height="height">
+                                    <div class="service-element">
+                                        <i class="service-icon icon-chemistry"></i>
+                                    </div>
+                                    <div class="service-info">
+                                        <h3>Android</h3>
+                                        <p class="margin-b-5">IDE: Android Studio</p>
+                                        <p class="margin-b-5">SDK: Google Map SDK</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 md-margin-b-4">
+                                <div class="service bg-color-base wow zoomIn" data-height="height"
+                                    data-wow-duration=".3" data-wow-delay=".1s">
+                                    <div class="service-element">
+                                        <i class="service-icon color-white icon-screen-tablet"></i>
+                                    </div>
+                                    <div class="service-info">
+                                        <h3 class="color-white">IBM Cloud</h3>
+                                        <p class="color-white margin-b-5"><b>What is IBM Cloud?</b></p>
+                                        <p class="color-white margin-b-5">IBM Cloud® offers the most open and secure
+                                            public cloud for business, a next-generation hybrid multicloud platform,
+                                            advanced data and AI capabilities, and deep enterprise expertise across 20
+                                            industries.</p>
+                                    </div>
+                                    <a href="https://www.ibm.com/cloud" class="content-wrapper-link"></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--// end row -->
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+    </div>
+    <!-- End Experience -->
+
+
+    <!-- Education -->
+    <div id="education">
+
+        <div class="container content-lg">
+            <div class="row">
+                <div class="col-sm-3 sm-margin-b-30">
+                    <div class="text-right sm-text-left">
+                        <h2 class="margin-b-0">Certificate</h2>
+                        <p>IBM Certificate.</p>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-sm-offset-1">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6 md-margin-b-30">
+                            <h5>IBM Bluemix Certificate</h5>
+                            <div class="work work-popup-trigger">
+                                <a href="javascript:void(0);">Click Here</a>
+                                <div class="work-popup-overlay">
+                                    <div class="work-popup-content" style="width:782px;">
+                                        <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                        <div class="margin-b-30">
+                                            <h3 class="margin-b-5">Certificate</h3>
+                                            <span>IBM Bluemix</span>
+                                        </div>
+                                        <div class="row">
+                                            <img src="{{ url_for('static', filename='img/ibm_bluemix.jpg')}}"
+                                                alt="Polytechnic Certificate">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// end row -->
+        </div>
+    </div>
+    <!-- End Education -->
+
+
+    <!-- Work -->
+    <div id="work">
+        <div class="bg-color-sky-light">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Images</h2>
+                            <p>Application images.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <!-- Masonry Grid -->
+                        <div class="masonry-grid row row-space-2">
+                            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/healthandfitness/01.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Login Page</h3>
+                                            </div>
+                                            <div class="row">
+                                                <img src="{{ url_for('static', filename='img/healthandfitness/01.jpg')}}"
+                                                    alt="error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/healthandfitness/02.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Menu Page</h3>
+                                            </div>
+                                            <div class="row">
+                                                <img src="{{ url_for('static', filename='img/healthandfitness/02.jpg')}}"
+                                                    alt="error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/healthandfitness/03.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Profile Page</h3>
+                                            </div>
+                                            <div class="row">
+                                                <img src="{{ url_for('static', filename='img/healthandfitness/03.jpg')}}"
+                                                    alt="error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/healthandfitness/04.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Activity Page</h3>
+                                            </div>
+                                            <div class="row">
+                                                <img src="{{ url_for('static', filename='img/healthandfitness/04.jpg')}}"
+                                                    alt="error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/healthandfitness/05.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Activity start</h3>
+                                            </div>
+                                            <div class="row">
+                                                <img src="{{ url_for('static', filename='img/healthandfitness/05.jpg')}}"
+                                                    alt="error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/healthandfitness/10.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Alarms</h3>
+                                            </div>
+                                            <div class="row">
+                                                <img src="{{ url_for('static', filename='img/healthandfitness/10.jpg')}}"
+                                                    alt="error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/healthandfitness/11.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Rewards Page</h3>
+                                            </div>
+                                            <div class="row">
+                                                <img src="{{ url_for('static', filename='img/healthandfitness/11.jpg')}}"
+                                                    alt="error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                        </div>
+                        <!-- End Masonry Grid -->
+                    </div>
+                </div>
+            </div>
+            <!--// end row -->
+        </div>
+    </div>
+    <!-- End Work -->
+
+    {% endblock %}

@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Feedback
+{% endblock %}
+
+{% block header %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $("#yesCheckBox").change(function () {
+            if (this.checked) {
+                //alert("yes");
+                $('#noCheckBox').prop('checked', false);
+            }
+        });
+        $("#noCheckBox").change(function () {
+            //alert("no");
+            if (this.checked) {
+                $('#yesCheckBox').prop('checked', false);
+            }
+        });
+
+        var val = document.querySelector("#impt").value
+
+        if (val != '') {
+            jQuery('#myModal').modal();
+        }
+    });
+</script>
+{% endblock %}
+
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+{% block navbar %}
+<div class="collapse navbar-collapse nav-collapse">
+    <div class="menu-container">
+        <ul class="nav navbar-nav navbar-nav-right">
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="/home/{{useridx}}">Home</a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+<!-- End Navbar Collapse -->
+
+{% block sliderwp %}
+<div class="promo-block parallax-window" data-parallax="scroll"
+    data-image-src="{{ url_for('static', filename='img/1920x1080/feedbackx.jpg')}}">
+    {% endblock %}
+
+
+    {% block slidertitle %}
+    <h1 class="promo-block-title">Yip Zhen Yu</h1>
+    <p class="promo-block-text">Software Developer &amp; Security Engineer</p>
+    {% endblock %}
+
+
+
+    {% block body %}
+    <!-- Experience -->
+    <div id="experience">
+        <div class="bg-color-feedback" data-auto-height="true">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-2 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Feedback</h2>
+                            <p>Your feedback matters alot to me.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-sm-offset-1">
+                        <div class="row row-space-2 margin-b-4">
+                            <form action="{{ url_for('submitfeedback')}}" method="POST">
+                                <div class="form-group row">
+                                    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="name" id="inputName" required
+                                            style="background:white">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPhone" class="col-sm-2 col-form-label">Phone Number</label>
+                                    <div class="col-sm-10">
+                                        <input type="phone" class="form-control" name="phone_number" required
+                                            id="inputPhone" style="background:white">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" name="email" required id="inputEmail"
+                                            style="background:white">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputDesc" class="col-sm-2 col-form-label">Description</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" id="inputDesc" name="description" required
+                                            rows="4" style="background:white"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-2">Do you want a response?</div>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="checkbox" value="yes"
+                                                checked="checked" type="checkbox" id="yesCheckBox">
+                                            <label class="form-check-label" for="yesCheckBox">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="checkbox" type="checkbox" value="no"
+                                                id="noCheckBox">
+                                            <label class="form-check-label" for="noCheckBox">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <input type="hidden" class="hidden" name="userid" value="{{useridx}}">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-11"></div>
+                                    <div class="col-sm-1">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!--// end row -->
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+    </div>
+    <!-- End Experience -->
+    <input type="hidden" id="impt" value="{{message}}">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    {{message}}
+                </div>
+                <div class=" modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    {% endblock %}

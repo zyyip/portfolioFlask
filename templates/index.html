@@ -1,0 +1,480 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block slidertitle %}
+<h1 class="promo-block-title">Yip Zhen Yu</h1>
+<p class="promo-block-text">Software Developer &amp; Security Engineer</p>
+{% endblock %}
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+{% block navbar %}
+<div class="collapse navbar-collapse nav-collapse">
+    <div class="menu-container">
+        <ul class="nav navbar-nav navbar-nav-right">
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#body">Home</a></li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#about">About</a></li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#experience">Experience</a>
+            </li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#education">Education</a>
+            </li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#work">Work</a></li>
+            <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+<!-- End Navbar Collapse -->
+
+{% block sliderwp %}
+<div class="promo-block parallax-window" data-parallax="scroll"
+    data-image-src="{{ url_for('static', filename='img/1920x1080/02.jpg')}}">
+    {% endblock %}
+
+    {% block body %}
+    <!--========== PAGE LAYOUT ==========-->
+    <!-- About -->
+    <div id="about">
+        <div class="container content-lg">
+            <div class="row">
+                <div class="col-sm-3 sm-margin-b-30">
+                    <div class="text-right sm-text-left">
+                        <h2 class="margin-b-0">Intro</h2>
+                        <p>What I am all about.</p>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-sm-offset-1">
+                    <div class="margin-b-60">
+
+                        <p>
+                            I am a fresh graduate from University of Wollongong (SIM), studied Digital Systems Security
+                            and am looking to pursue a career in the IT industry. I have a great passion in programming
+                            and security analysis as i feel a great sense of achievement upon solving difficult tasks.
+                            I am a responsible person and would always go by deadlines regardless in school or at work.
+                            I believe that learning should be a life-long pursuit and thus i constantly read up and
+                            study anything tech related.</p>
+                    </div>
+
+                    <!-- Progress Box -->
+                    <div class="progress-box">
+                        <h5>PHP <span class="color-heading pull-right">75%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>Phyton <span class="color-heading pull-right">60%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="60"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>HTML5 <span class="color-heading pull-right">80%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>JavaSript <span class="color-heading pull-right">60%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="60"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>Java <span class="color-heading pull-right">65%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="65"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>C++ <span class="color-heading pull-right">50%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="50"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>C# <span class="color-heading pull-right">50%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="50"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>C <span class="color-heading pull-right">50%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="50"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>Visual Basic <span class="color-heading pull-right">40%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="40"></div>
+                        </div>
+                    </div>
+                    <div class="progress-box">
+                        <h5>Swift <span class="color-heading pull-right">10%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-color-base" role="progressbar" data-width="10"></div>
+                        </div>
+                    </div>
+                    <!-- End Progress Box -->
+                </div>
+            </div>
+            <!--// end row -->
+        </div>
+    </div>
+    <!-- End About -->
+
+    <!-- Experience -->
+    <div id="experience">
+        <div class="bg-color-sky-light" data-auto-height="true">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Experience</h2>
+                            <p>Learning as i go.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <div class="row row-space-2 margin-b-4">
+                            <div class="col-md-4 md-margin-b-4">
+                                <div class="service" data-height="height">
+                                    <div class="service-element">
+                                        <i class="service-icon icon-chemistry"></i>
+                                    </div>
+                                    <div class="service-info">
+                                        <h3>PHP</h3>
+                                        <p class="margin-b-5">1 year working experience</p>
+                                    </div>
+                                    <!-- <a href="" class="content-wrapper-link"></a> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 md-margin-b-4">
+                                <div class="service bg-color-base wow zoomIn" data-height="height"
+                                    data-wow-duration=".3" data-wow-delay=".1s">
+                                    <div class="service-element">
+                                        <i class="service-icon color-white icon-screen-tablet"></i>
+                                    </div>
+                                    <div class="service-info">
+                                        <h3 class="color-white">Android</h3>
+                                        <p class="color-white margin-b-5">Various school projects in polytechnic and
+                                            unviserity.</p>
+                                    </div>
+                                    <!-- <a href="" class="content-wrapper-link"></a> -->
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service" data-height="height">
+                                    <div class="service-element">
+                                        <i class="service-icon icon-badge"></i>
+                                    </div>
+                                    <div class="service-info">
+                                        <h3>Python</h3>
+                                        <p class="margin-b-5">Currently pursuing a course in Web Programming with Python
+                                            &amp; Javascript to obtain the harvardX certificate.</p>
+                                        <p class="margin-b-5">This website was developed using Python, HTML5 &amp; CSS3
+                                        </p>
+                                    </div>
+                                    <!-- <a href="" class="content-wrapper-link"></a> -->
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--// end row -->
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+    </div>
+    <!-- End Experience -->
+
+
+    <!-- Education -->
+    <div id="education">
+
+        <div class="container content-lg">
+            <div class="row">
+                <div class="col-sm-3 sm-margin-b-30">
+                    <div class="text-right sm-text-left">
+                        <h2 class="margin-b-0">Education</h2>
+                        <p>My Certificates.</p>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-sm-offset-1">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6 md-margin-b-30">
+                            <h5>O Levels</h5>
+                            <div class="work work-popup-trigger">
+                                <a href="javascript:void(0);">Guangyang Secondary School</a>
+                                <div class="work-popup-overlay">
+                                    <div class="work-popup-content" style="height:1000px;">
+                                        <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                        <div class="margin-b-30">
+                                            <h3 class="margin-b-5">Certificate</h3>
+                                            <span>O' Levels</span>
+                                        </div>
+                                        <div class="row" style="margin-top:-25px;">
+                                            <img src="{{ url_for('static', filename='img/o_level_cert.jpg')}}"
+                                                alt="O Levels Certificate">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6 md-margin-b-30">
+                            <h5>Polytechnic</h5>
+                            <div class="work work-popup-trigger">
+                                <a href="javascript:void(0);">Nanyang Polytechnic</a>
+                                <div class="work-popup-overlay">
+                                    <div class="work-popup-content" style="width:870px;">
+                                        <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                        <div class="margin-b-30">
+                                            <h3 class="margin-b-5">Certificate</h3>
+                                            <span>Polytechnic</span>
+                                        </div>
+                                        <div class="row">
+                                            <img src="{{ url_for('static', filename='img/poly_cert.jpg')}}"
+                                                alt="Polytechnic Certificate">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                            <h5>University</h5>
+                            <div class="work work-popup-trigger">
+                                <a href="javascript:void(0);">University Of Wollongong, SIM</a>
+                                <div class="work-popup-overlay">
+                                    <div class="work-popup-content">
+                                        <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                        <div class="margin-b-30">
+                                            <h3 class="margin-b-5">Certificate</h3>
+                                            <span>University</span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                <img src="{{ url_for('static', filename='img/uni_cert.jpg')}}"
+                                                    alt="University Certificate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--// end row -->
+        </div>
+    </div>
+    <!-- End Education -->
+
+
+    <!-- Work -->
+    <div id="work">
+        <div class="bg-color-sky-light">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="text-right sm-text-left">
+                            <h2 class="margin-b-0">Projects</h2>
+                            <p>My works.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1">
+                        <!-- Masonry Grid -->
+                        <div class="masonry-grid row row-space-2">
+                            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/800x400/03.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Final Year Project</h3>
+                                                <span>University</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p>Android OS as an open sourced OS, which allows user to
+                                                            install any apps even those that are not from the google
+                                                            play store.</p>
+                                                        <p>This action can impose some security issues.</p>
+                                                        <p>The purpose of this project is to the following:</p>
+                                                        <p>&emsp;1. Keep track on all the apps that have been installed
+                                                            "directly" via the APK</p>
+                                                        <p>&emsp;2. Monitor the behaviour of the apps that are listen
+                                                            from step 1</p>
+                                                        <p>The aim is to monitor if there exists any behaviour change in
+                                                            the system, such as unauthorised installation of other apps,
+                                                            or any other things that can be categorized as malicious
+                                                            software.</p>
+                                                        <ul class="list-inline work-popup-tag">
+                                                            <li class="work-popup-tag-item"><a
+                                                                    class="work-popup-tag-link"
+                                                                    href="https://yipzhenyu.wixsite.com/ss194h">Project
+                                                                    Dairy Website</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p class="margin-b-5"><strong>Software:</strong> Android Studio
+                                                        </p>
+                                                        <p class="margin-b-5"><strong>Programming language:</strong>
+                                                            Java</p>
+                                                        <p class="margin-b-5"><strong>Layout:</strong> XML</p>
+                                                        <p class="margin-b-5"><strong>API used:</strong> Virus Total API
+                                                        </p>
+                                                        <p class="margin-b-5"><strong>Database: Nil</strong></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/397x400/02.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">Final Year Project</h3>
+                                                <span>Polytechnic</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p>Participated in the IBM BlueMix Challenge for my polytechnic
+                                                            final year project. I was tasked to develop an application
+                                                            based off a self-thought innovative concept that had to use
+                                                            IBM Cloud services.</p>
+                                                        <p>
+                                                            The idea was to develop an interactive android health and
+                                                            fitness application that allowed users to communicate with
+                                                            their families and friends to plan exercising routines on a
+                                                            daily basis. The app also provided basic functionalities
+                                                            such as, calculating and planning of the amount of calories
+                                                            to be reduced and the ability to navigate throughout the
+                                                            world with google maps sdk.
+                                                        </p>
+                                                        <p>
+                                                            IBM liked our concept and we were chosen as the top 5
+                                                            finalists group amongst 20 other groups that has
+                                                            participated in the challenge.
+                                                        </p>
+
+                                                        <ul class="list-inline work-popup-tag">
+                                                            <li class="work-popup-tag-item"><a
+                                                                    class="work-popup-tag-link"
+                                                                    href="/hnfpage/{{useridx}}">More
+                                                                    Information</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p class="margin-b-5"><strong>Software:</strong> Android Studio
+                                                        </p>
+                                                        <p class="margin-b-5"><strong>Programming Language:</strong>
+                                                            Java</p>
+                                                        <p class="margin-b-5"><strong>Layout:</strong> XML</p>
+                                                        <p class="margin-b-5"><strong>Database:</strong> IBM Bluemix
+                                                            Cloud</p>
+                                                        <p class="margin-b-5"><strong>SDK:</strong> Google Maps SDK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-4">
+                                <!-- Work -->
+                                <div class="work work-popup-trigger">
+                                    <div class="work-overlay">
+                                        <img class="full-width img-responsive"
+                                            src="{{ url_for('static', filename='img/1920x1080/harvardx2.jpg')}}"
+                                            alt="Portfolio Image">
+                                    </div>
+                                    <div class="work-popup-overlay">
+                                        <div class="work-popup-content">
+                                            <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                            <div class="margin-b-30">
+                                                <h3 class="margin-b-5">HarvardX</h3>
+                                                <span>Online learning</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p>HarvardX is a University-wide strategic initiative, overseen
+                                                            by the Office of the VPAL. HarvardX enables faculty to
+                                                            create online learning experiences for residential and
+                                                            online use. Its Harvard Online Courses portal enables
+                                                            learners around the globe to gain access to Harvard’s
+                                                            extensive collection of online courses.</p>
+
+                                                        <ul class="list-inline work-popup-tag">
+                                                            <li class="work-popup-tag-item"><a
+                                                                    class="work-popup-tag-link"
+                                                                    href="https://vpal.harvard.edu/harvardx">Official
+                                                                    Website</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="margin-t-10 sm-margin-t-0">
+                                                        <p class="margin-b-5"><strong>Course name:</strong> CS50's Web
+                                                            Programming with Python and JavaScript
+                                                        </p>
+                                                        <ul class="list-inline work-popup-tag" style="margin-top:56px;">
+                                                            <li class="work-popup-tag-item"><a
+                                                                    class="work-popup-tag-link"
+                                                                    href="/harvardxpage/{{useridx}}">View My
+                                                                    Projects</a>
+                                                            </li>
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Work -->
+                            </div>
+                        </div>
+                        <!-- End Masonry Grid -->
+                    </div>
+                </div>
+            </div>
+            <!--// end row -->
+        </div>
+    </div>
+    <!-- End Work -->
+
+    {% endblock %}

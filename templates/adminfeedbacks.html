@@ -1,0 +1,72 @@
+{% extends "adminlayout.html" %}
+
+{% block title %}
+Feedbacks
+{% endblock %}
+
+{% block navigationmenu %}
+<li><a href="/admindashboard"><i class="icon-home"></i>Home </a></li>
+<li class="active"><a href="/adminfeedbacks"> <i class="icon-padnote"></i>Feedbacks </a></li>
+<li><a href="/adminchannel/{{userinfo.userid}}" target="_blank"> <i class="icon-grid"></i>Messages </a></li>
+<li><a href="/home/{{userinfo.userid}}"> <i class="icon-website"></i>Personal Website </a></li>
+{% endblock %}
+
+{% block headertitle %}Feedbacks{% endblock %}
+
+
+{% block body %}
+<section class="tables">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <!-- <div class="card-close">
+                        <div class="dropdown">
+                            <button type="button" id="closeCard3" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                            <div aria-labelledby="closeCard3" class="dropdown-menu dropdown-menu-right has-shadow"><a
+                                    href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a
+                                    href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+                        </div>
+                    </div> -->
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4" style="margin-left:645px;">Feedbacks</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Phone Number</th>
+                                        <th>Email</th>
+                                        <th>Feedback Timestamp</th>
+                                        <th>Description</th>
+                                        <th>Response</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for feedbackall in feedbackalls %}
+                                    <tr>
+                                        <th scope="row">{{feedbackall.feedbackid}}</th>
+                                        <td>{{feedbackall.contact_name}}</td>
+                                        <td><a
+                                                href="tel:+65{{feedbackall.phone_number}}">{{feedbackall.phone_number}}</a>
+                                        </td>
+                                        <td><a href="mailto:{{feedbackall.email}}">{{feedbackall.email}}</a></td>
+                                        <td>{{feedbackall.feedbackdate}}</td>
+                                        <td>{{feedbackall.descriptions}}</td>
+                                        <td>{{feedbackall.response}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

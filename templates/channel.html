@@ -1,0 +1,313 @@
+{% extends "channellayout.html" %}
+
+
+
+
+{% block title %}
+Chat Room
+{% endblock %}
+
+{% block header %}
+
+<style type="text/css">
+    /* Chat containers */
+    .containers {
+        border: 2px solid #dedede;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 10px;
+        padding-bottom: 2px;
+        margin: auto;
+        margin-bottom: 10px;
+        width: 55%;
+    }
+
+    /* Darker chat container */
+    .darker {
+        border-color: #ccc;
+        background-color: #ddd;
+    }
+
+    /* Clear floats */
+    .containers::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Style images */
+    .containers img {
+        /* float: left; */
+        max-width: 60px;
+        width: 100%;
+        margin-right: 20px;
+        border-radius: 50%;
+    }
+
+    /* Style the right image */
+    .containers img.right {
+        float: right;
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+    /* Style time text */
+    .time-right {
+        float: right;
+        color: #aaa;
+    }
+
+    /* Style time text */
+    .time-left {
+        float: left;
+        color: #999;
+    }
+
+
+    /*name styling */
+    .name-left {
+        float: left;
+        font-weight: bold;
+        /* color: #06B6B5; */
+    }
+
+
+    .name-right {
+        float: right;
+        /* color: #06B6B5; */
+    }
+</style>
+
+
+
+<script>
+
+    var count = 0;
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+
+        localStorage.setItem("current_channel", document.querySelector('#current_channels').value);
+        document.querySelector('#channelno').innerHTML = "Channel #" + localStorage.getItem("current_channel");
+        // Connect to websocket
+        var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+
+
+        // When connected, configure buttons
+        socket.on('connect', () => {
+
+            socket.emit('joined', localStorage.getItem("current_channel"), localStorage.getItem("username"));
+
+            document.querySelector('#new-message').onsubmit = function () {
+
+                const div1 = document.createElement('div');
+
+                if (count === 0) {
+                    div1.className = 'containers';
+                    count++;
+                }
+                else if (count === 1) {
+                    div1.className = 'containers darker';
+                    count--;
+                }
+
+                const p1 = document.createElement('p');
+                p1.innerHTML = document.querySelector('#chat').value;
+                const p2 = document.createElement('p');
+                p2.innerHTML = localStorage.getItem("username");
+                p2.className = 'name-left';
+                const spans = document.createElement('span');
+                spans.className = 'time-right';
+                var d = new Date();
+                var hh = d.getHours();
+                var mm = d.getMinutes();
+                hh = hh < 10 ? '0' + hh : hh;
+                mm = mm < 10 ? '0' + mm : mm;
+                curr_time = hh + ':' + mm;
+                spans.innerHTML = curr_time;
+
+
+                // div1.append(p1);
+                // div1.append(p2);
+                // div1.append(spans);
+
+
+                // document.querySelector('#messageCont').append(div1);
+                socket.emit('newMessage', document.querySelector('#chat').value, curr_time, localStorage.getItem("username"), localStorage.getItem("current_channel"));
+                document.querySelector('#chat').value = '';
+                return false;
+            };
+
+
+        });
+
+
+        socket.on('announce message', data => {
+
+            //alert("Hello! I am an alert box!!");
+
+            const div1 = document.createElement('div');
+            div1.className = 'containers';
+            const p1 = document.createElement('p');
+            p1.innerHTML = data.msg;
+            const p2 = document.createElement('p');
+            p2.innerHTML = data.user;
+            p2.className = 'name-left';
+            const spans = document.createElement('span');
+            spans.className = 'time-right';
+            spans.innerHTML = data.timestamp;
+
+            div1.append(p1);
+            div1.append(p2);
+            div1.append(spans);
+
+            document.querySelector('#messageCont').append(div1);
+
+        });
+
+
+
+
+        function sendFile(socket) {
+            // Send file to server
+            if (document.querySelector("#upload-file").value != "") {
+                var file = document.querySelector("#upload-file").files[0];
+
+                const request = new XMLHttpRequest();
+                request.open("POST", "/receive-file/");
+
+                request.onload = () => {
+                    if (request.status == 204) {
+                        // Received empty file name
+                    }
+                    if (request.status == 201) {
+                        // File was saved
+                        const data = JSON.parse(request.responseText);
+                        const channel_name = localStorage.getItem("current_channel");
+                        const username = localStorage.getItem("username");
+                        const filename = data.filename;
+                        const link = data.link;
+                        var d = new Date();
+                        var hh = d.getHours();
+                        var mm = d.getMinutes();
+                        hh = hh < 10 ? '0' + hh : hh;
+                        mm = mm < 10 ? '0' + mm : mm;
+                        curr_time = hh + ':' + mm;
+                        //alert(username);
+                        socket.emit("file sent", { "channel_name": channel_name, "username": username, "filename": filename, "link": link, "curr_time": curr_time });
+                    }
+                };
+
+                var data = new FormData();
+                data.append("file", file, file.name);
+                data.append("channel_name", localStorage.getItem("channel"));
+                request.send(data);
+
+            } else {
+                // File not specified
+            }
+        }
+
+
+        // On file choose
+        document.querySelector("#upload_file_button").onclick = () => {
+            sendFile(socket);
+            socket.emit("send file");
+        };
+
+        // On new file receive
+        socket.on("announce file", data => {
+            const username = data.username;
+            const timestamp = data.timestamp;
+            const link = data.link;
+            const filename = data.filename;
+
+            const owner = (username == localStorage.getItem("username"));
+
+            const div1 = document.createElement('div');
+            div1.className = 'containers';
+            var p1 = document.createElement('a');
+            p1.href = data.link;
+            p1.dataset.link = data.link;
+            p1.innerText = data.filename;
+            setOnFileClick(p1);
+            const p3 = document.createElement('p');
+            const p2 = document.createElement('p');
+            p2.innerHTML = data.username;
+            p2.className = 'name-left';
+            const spans = document.createElement('span');
+            spans.className = 'time-right';
+            spans.innerHTML = data.timestamp;
+
+
+            div1.append(p1);
+            div1.append(p3);
+            div1.append(p2);
+            div1.append(spans);
+
+            document.querySelector('#messageCont').append(div1);
+
+        });
+
+        function setOnFileClick(a) {
+            // Set onclick method
+            a.onclick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open(a.dataset.link, '_blank');
+            };
+        }
+
+
+    });
+
+</script>
+{% endblock %}
+
+
+{% block body %}
+<input type="hidden" class="hidden" id="current_channels" value="{{channel}}" />
+<div class=" container">
+    <h3 style="text-align:center">ChatBox</h3>
+</div>
+
+<div id="messageCont" class="messageCont">
+
+    {% if messages %}
+
+    {% for message in messages %}
+    {% if message[3] %}
+    <div class="containers">
+        <a href={{message[2]}}>{{ message [3] }}</a>
+        <p> </p>
+        <p class="name-left">{{ message[1] }}</p>
+        <span class="time-right">{{ message[0] }}</span>
+    </div>
+    {% else %}
+    <div class="containers">
+        <p>{{ message [2] }}</p>
+        <p class="name-left">{{ message[1] }}</p>
+        <span class="time-right">{{ message[0] }}</span>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+
+    {% endif %}
+
+</div>
+<div class="container">
+    <form id="new-message">
+        <input type="text" id="chat" name="chat" class="form-control">
+        <button style="float:right; margin-top:10px; " class="btn btn-primary" type="submit" id="chatButton">Sent
+            Message</button>
+    </form>
+    <div style="margin-top:10px;">
+        <input type="file" id="upload-file" name="file">
+        <button class="btn btn-info" id="upload_file_button">Upload</button>
+    </div>
+
+</div>
+
+
+{% endblock %}
