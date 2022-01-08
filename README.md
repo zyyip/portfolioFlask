@@ -1,10 +1,11 @@
 # How to run the project
 export FLASK_APP="application.py"
-export DATABASE_URL="postgres://aswhnyzjhwhoyc:7f7cd26cb3bbeb10b78f7017bcc3e07aaf15dee9752607183c4a50b79fe97f16@ec2-54-165-36-134.compute-1.amazonaws.com:5432/d4fqbm2gc713m3"
+export DATABASE_URL="postgresql://aswhnyzjhwhoyc:7f7cd26cb3bbeb10b78f7017bcc3e07aaf15dee9752607183c4a50b79fe97f16@ec2-54-165-36-134.compute-1.amazonaws.com:5432/d4fqbm2gc713m3"
 export EMAIL_USER="enter your gmail account here"
 export EMAIL_PASSWORD="enter your gmail password here"
 export MAIL_RECIPIENT="enter alert receiving email here"
 export UPLOAD_DIR="fileuploads"
+pip install -r requirements.txt
 flask run 
 
 
